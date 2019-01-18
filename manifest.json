@@ -1,0 +1,22 @@
+---
+---
+
+{
+  "name": "{{ site.title }}",
+  "short_name": "{{ site.short_title }}",
+  "description": "{{ site.description }}",
+  "start_url": "/",
+  "background_color": "#313131",
+  "theme_color": "#9DCA3B",
+  "display": "minimal-ui",
+  "icons": [{
+    "src": "{{ site.baseurl }}{{ site.img_dir }}Adept_Favicon.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  },
+  {
+    "src": "{{ site.baseurl }}{{ site.img_dir }}Adept_Favicon_512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

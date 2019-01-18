@@ -1,0 +1,50 @@
+<div class="position-fixed bg-dark px-4 py-3 mobile-nav-overlay d-lg-none"
+id="NavMobileOverlay">
+  {% capture logo %}{{ site.logo }}{% endcapture %}
+  {% capture alt %}{{ site.short_title }} Logo{% endcapture %}
+  {% include image.html name=logo alt=alt class="img-fluid w-75" %}
+  <hr class="mobile-nav-separator">
+  <ul class="navbar-nav h-100 mx-auto">
+    {% assign links = site.data.navigation %}
+      {% for link in links %}
+        {% if link.sublinks %}
+        <li class="nav-item dropdown
+        {% if page.url contains link.url %} active{% endif %}">
+          <a class="nav-link dropdown-toggle text-light"
+          href="#"
+          id="Dropdown-{{ forloop.index }}-Toggle"
+          role="button"
+          data-toggle="dropdown"
+          data-target="#NavMobileOverlay"
+          aria-haspopup="true"
+          aria-expanded="false">
+            {{ link.title }}
+          </a>
+          <div class="dropdown-menu bg-dark border-0 pt-0 mt-0" aria-labelledby="Dropdown-{{ forloop.index }}-Toggle">
+            {% for sublink in link.sublinks %}
+              {% if sublink.title == 'separator' %}
+                <div class="divider"></div>
+              {% else %}
+                <a class="dropdown-item text-primary font-italic"
+                href="{{ sublink.url | absolute_url }}">
+                  {{ sublink.title }}
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </li>
+      {% else %}
+        <li class="nav-item
+        {% if page.url contains link.url %} active{% endif %}">
+          <a class="nav-link text-light" title="{{ link.title }}" href="{{ link.url | absolute_url }}">
+            {{ link.title }}
+            {% if page.url contains link.url %}
+              <!-- For screen readers -->
+              <span class="sr-only">(current)</span>
+            {% endif %}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

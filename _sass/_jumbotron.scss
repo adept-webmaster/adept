@@ -1,0 +1,126 @@
+.jumbotron {
+  &.jumbotron-fluid {
+    @include media-breakpoint-up(lg) {
+      min-height: 400px;
+    }
+
+    @include media-breakpoint-down(md) {
+      min-height: 250px;
+    }
+    h1, .h1 {
+      text-transform: none;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1.7rem !important;
+      }
+    }
+
+    &.jumbotron-home {
+      @include media-breakpoint-down(sm) {
+        min-height: calc(100vh - 118px);
+      }
+    }
+
+    .jumbotron--content-box {
+      @include media-breakpoint-up(md) {
+        background: rgba(49,49,49,0.90);
+        padding-right: 10rem;
+        padding-left: 7rem;
+
+        @include media-breakpoint-down(md) {
+          padding-right: 7rem;
+          padding-left: 5rem;
+        }
+
+        img {
+          width: 85px !important;
+          position: absolute;
+          right: 100px;
+          top: 35px;
+
+          @include media-breakpoint-down(md) {
+            width: 64px !important;
+            right: 70px;
+            top: 35px;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      &.lazyloaded {
+        .jumbotron--content-box:first-of-type, .hero-contact-slither {
+          @include fadeInLeft(
+            $function: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+            $duration: .8s
+          );
+        }
+      }
+    }
+
+
+    &.static-page-hero {
+      .jumbotron--content-box {
+        @include media-breakpoint-up(sm) {
+          padding-top: 4rem !important;
+          padding-bottom: 4rem !important;
+        }
+        background-color: rgba(theme-color("dark"), 0.8) !important;
+        border-bottom-style: solid;
+        border-bottom-width: 7px;
+
+        @include media-breakpoint-down(lg) {
+          text-align: center;
+        }
+      }
+
+    }
+    padding: 10rem 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+
+    .fas.fa-angle-right {
+      vertical-align: middle;
+    }
+
+    .jumbotron__icons {
+      margin-top: 15vw;
+      @include media-breakpoint-down(sm) {
+        margin-top: 0;
+      }
+      .container {
+        @include media-breakpoint-down(md) {
+          text-align: center;
+          margin-top: 0;
+        }
+
+        .icon-container {
+          border-width: 4px;
+          border-style: solid;
+          width: 87%;
+
+          @include media-breakpoint-down(md) {
+            width: auto;
+          }
+
+          .hero-icon {
+            width: 100%;
+            @include media-breakpoint-down(sm) {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .jumbotron.lazyloaded {
+    & > .come-in-view.come-in-left.come-in {
+      @include fadeInLeft(
+        $delay: 0.5s
+      );
+    }
+  }
+}

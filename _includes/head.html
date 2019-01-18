@@ -1,0 +1,32 @@
+<head>
+  <title>
+    {% if page.title %}
+      {% unless page.title contains site.title %}
+        {{ page.title }} &ndash; {{ site.title }}
+      {% endunless %}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#9DCA3B">
+  
+  {% include fav.html %}
+
+  <script async src="{{ "/assets/scripts/lazysizes.min.js" | absolute_url }}"></script>
+
+  <link rel="preload" href="{{ site.img_dir | absolute_url }}{{ site.logo }}" as="image">
+  <link rel="preload" href="{{ "assets/stylesheets/main.css" | absolute_url }}" as="style">
+
+  <link
+    rel="stylesheet"
+    href="{{ "assets/stylesheets/main.css" | absolute_url }}"
+  >
+
+  {%- include scripts.html -%}
+
+  {% feed_meta %}
+  {% seo %}
+</head>

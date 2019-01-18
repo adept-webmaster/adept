@@ -1,0 +1,66 @@
+<div class="modal fade" id="AboutUsModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog m-0 mx-md-auto my-md-5 p-0" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% capture image %}{{ include.image }}{% endcapture %}
+      {% capture alt %}{{ include.alt }}{% endcapture %}
+      {% include image.html name=image  alt=alt class="img-fluid w-100" %}
+      <div class="modal-body text-dark">
+        <p>At Adept Fulfilment, we specialise in efficient warehouse and indoor 
+        storage facilities, providing you with expert guidance and a premium 
+        service tailored to your needs.</p>
+
+        <p>Fully experienced, we are a company that thrives on offering a 
+        professional storage and distribution service.</p>
+
+        <p>With cutting edge technology, our 125,000 square foot Distribution 
+        Centre is a secure and contemporary workspace that allows you to focus 
+        on expanding your business in your own way.</p>
+      
+        <p>Adept Fulfilment offers you a range of services, including 
+        multi-channel integration, real-time reporting and low-cost storage & 
+        shipping rates, all of which have been designed to save you time and 
+        money.</p>
+        
+        <p>Our storage and inventory management system are available through a 
+        simple and competitive pricing structure.</p>
+      
+        <p>By storing your goods, raw materials and inventories on British soil, 
+        you can avoid any unnecessary bureaucracy and potential long-term 
+        delays that may occur in the near future.</p>
+      
+        <p>Adept Fulfilment is fully committed to providing you with quality 
+        outsourced warehousing solutions and competitive distribution rates, 
+        ensuring your company is given a first-rate service.</p>
+
+        <span class="font-weight-bold text-uppercase h4">
+          <a href="{{ site.data.about-us.cta_url | absolute_url }}" class="text-dark">{{ site.data.about-us.cta_text }}</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    // if there is no modal_shown cookie then display modal popup after 5 secs
+    // this cookie expires in half a day if it does not already exist
+    if (Cookies.get('modal_shown') == null) {
+      var preloadTag = document.createElement("link");
+      preloadTag.rel = "preload";
+      preloadTag.href = "{{ site.img_dir | absolute_url }}{{ modal_img }}";
+      preloadTag.as = "image";
+
+      document.getElementsByTagName('head')[0].appendChild(preloadTag);
+      var inHalfADay = 0.5;
+      setTimeout(function() {
+        Cookies.set('modal_shown', 'yes', { expires: inHalfADay, path: '/' });
+        $('#timeBasedPopup').modal();
+      }, 5000)
+    }
+  })
+</script> -->

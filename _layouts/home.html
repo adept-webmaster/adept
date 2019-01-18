@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% assign about-image = "warehouse-driver.jpg" %}
+{% assign about-alt = "Warehouse Driver" %}
+
+{% include modal.html image=about-image alt=about-alt %}
+
+{% include home-hero.html
+  class="mb-0 bg-dark"
+  heading="Total storage and Fulfilment solution"
+  link="Enquire"
+  url="/contact"
+  type="full"
+  bg_image="warehouse-alley.jpg"
+  bg_position="center"
+  bg_size="cover"
+  text_position="left"
+%}
+
+{% include services-columns.html %}
+
+{% include picture-with-content.html picture=about-image alt=about-alt %}
+
+{% include brands.html %}

@@ -1,0 +1,22 @@
+---
+title: Picking & Packing
+page: picking-packing
+permalink: "/picking-packing/"
+position: 1
+layout: fulfilment-page
+show: true
+---
+
+{% include hero.html
+  bg_image="warehouse-box-on-conveyor.jpg"
+  bg_position="center"
+  bg_size="cover"
+  type="full"
+%}
+
+{% assign current_page = site.data.fulfilment[page.page] %}
+
+<div class="container py-5">
+  <h1 class="h4 text-primary">{{ current_page.title }}</h1>
+  {{ current_page.content | markdownify }}
+</div>

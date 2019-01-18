@@ -1,0 +1,39 @@
+---
+title: Adept | Fulfilment Services
+short_title: Adept
+description: We are Adept.
+logo: Adept White.svg
+lang: en_GB
+timezone: UTC
+collections:
+  uploads:
+    title: Uploads
+    output: true
+  posts:
+    title: News
+    output: true
+baseurl:
+url:
+markdown: kramdown
+phone: 0191 234 345 556
+email: info@adeptecommerceandfulfilment.com
+linkedin: https://www.linkedin.com/
+address:
+  address_line_1: Floor 3
+  address_line_2: 2 Lighthouse View
+  city: Seaham
+  county: County Durham
+  postcode: SR7 7PR
+img_dir: /uploads/
+exclude:
+  - vendor
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins:
+  - jekyll-feed
+  - github-pages
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+whitelist:
+  - jekyll-redirect-from

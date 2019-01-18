@@ -1,0 +1,30 @@
+<footer class="footer bg-dark text-light mt-0 py-5">
+  <div class="container-fluid bg-dark">
+    <!-- <div class="container text-center">
+      <div class="row justify-content-center">
+        {% for item in site.data.navigation %}
+          <a class="col-md-2 pb-4 pb-sm-0 px-2 font-weight-normal text-light footer-nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        {% endfor %}
+      </div>
+    </div> -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg text-center">
+          {% include social.html %}
+        </div>
+      </div>
+
+      <div class="row m-0 text-lg-right text-center justify-content-between align-items-center">
+        <div class="col-lg text-center">
+          {% capture logo %}{{ site.logo }}{% endcapture %}
+          {% capture alt %}{{ site.short_title }} Logo{% endcapture %}
+          {% include image.html name=logo class="img-fluid logo mx-auto" alt=alt %}
+        </div>
+        <noscript>
+            {% include noscript-image.html name=logo class="img-fluid logo mx-auto" alt=alt %}
+        </noscript>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,24 @@
+.modal-testimonial {
+  &.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, 25%) !important;
+  }
+
+  &.show .modal-dialog {
+    transform: translate(0, 0) !important;
+  }
+
+  .modal-dialog {
+    top: 113px;
+    max-width: 100%;
+  }
+
+  .modal-header {
+    justify-content: flex-start !important;
+    .close {
+      text-shadow: none;
+      margin: -1rem 1rem -1rem -1rem !important;
+      opacity: 1 !important;
+    }
+  }  
+}

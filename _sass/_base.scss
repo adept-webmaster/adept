@@ -1,0 +1,235 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  backface-visibility: hidden;
+  perspective: 1000;
+
+  -webkit-backface-visibility: hidden;
+
+  cursor: url('/uploads/adept-cursor.png'), default;
+}
+
+@include media-breakpoint-down(md) {
+
+  $mobile-font-ratio: 0.95;
+
+  body {
+    font-size: $font-size-base * $mobile-font-ratio !important;
+  }
+
+  .h1, h1 {
+    font-size: $h1-font-size * $mobile-font-ratio !important;
+  }
+
+  .h2, h2 {
+    font-size: $h2-font-size * $mobile-font-ratio !important;
+  }
+
+  .h3, h3 {
+    font-size: $h3-font-size * $mobile-font-ratio !important;
+  }
+
+  .h4, h4 {
+    font-size: $h4-font-size * $mobile-font-ratio !important;
+  }
+
+  .h5, h5 {
+    font-size: $h5-font-size * $mobile-font-ratio !important;
+  }
+
+  .h6, h6 {
+    font-size: $h6-font-size * $mobile-font-ratio !important;
+  }
+
+  .lead {
+    font-size: 0.85rem !important;
+  }
+}
+
+a,
+button,
+[role="button"],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+a {
+  transition: opacity .2s ease;
+
+  &:hover {
+    text-decoration: none !important;
+    opacity: 0.75;
+  }
+}
+
+.w-20 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  max-width: 20%;
+
+  @include media-breakpoint-only(md) {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.border-right-12 {
+  @include media-breakpoint-up(md) {
+    border-right: 12px solid;
+  }
+
+  @include media-breakpoint-down(sm) {
+    border-bottom: 12px solid;
+  }
+}
+
+.w-10 {
+  width: 10% !important;
+}
+
+.word-break {
+  word-break: break-word;
+}
+
+.container-fluid {
+  max-width: 1920px;
+  background-color: theme-color("dark");
+}
+
+// Only show when JS is not supported
+.no-js:not(html) {
+  display: none;
+
+  .no-js & {
+    display: block;
+  }
+}
+
+// Only show when JS is supported
+.js {
+  .no-js & {
+    display: none !important;
+  }
+}
+
+.lazyload {
+	opacity: 0;
+}
+
+img.lazyloading {
+  opacity: 1 !important;
+  z-index: 2 !important;
+  height: 72px !important;
+  object-fit: contain;
+}
+
+.come-in-view {
+  opacity: 0 !important;
+}
+
+.come-in {
+  opacity: 1 !important;
+}
+
+.come-in-view.come-in-left.come-in .lazyloaded {
+  @include fadeInLeft(
+    $function: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    $duration: .6s
+  );
+}
+
+.come-in-view.come-in-right.come-in .lazyloaded {
+  @include fadeInRight(
+    $function: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    $duration: .6s
+  );
+}
+
+.come-in-view.come-in-up.come-in .lazyloaded {
+  @include fadeInUp(
+    $function: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    $duration: .6s
+  );
+}
+
+.room-tab-pane {
+  @include fadeIn(
+    $function: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    $duration: .8s
+  );
+}
+
+.come-in-view.come-in-down.come-in {
+  @include fadeInDown(
+    $function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+  );
+}
+
+// make sure the swipe only animates when the box is actually in
+.come-in .lazyloaded ~ .come-in-view.slide-in-up.come-in {
+  animation: bounceKeepRotate 1s ease-in;
+  -webkit-animation: bounceKeepRotate 1s ease-in;
+}
+
+@include media-breakpoint-up(sm) {
+  @for $i from 1 through 10 {
+    .delay-#{$i} {
+      animation-delay: .15s * $i !important;
+    }
+  }
+}
+
+.embed-responsive-16by9::before {
+  @include media-breakpoint-down(lg) {
+    padding-top: 100% !important;
+  }
+}
+
+@keyframes bounceKeepRotate {
+  0% {
+    transform: translateX(0px) rotate(270deg);
+  }
+  30% {
+    transform: translateX(-10px) rotate(270deg);
+  }
+  60% {
+    transform: translateX(0px) rotate(270deg);
+  }
+  80% {
+    transform: translateX(-5px) rotate(270deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(270deg);
+  }
+}
+@-webkit-keyframes bounceKeepRotate {
+  0% {
+    transform: translateX(0px) rotate(270deg);
+  }
+  30% {
+    transform: translateX(-10px) rotate(270deg);
+  }
+  60% {
+    transform: translateX(0px) rotate(270deg);
+  }
+  80% {
+    transform: translateX(-5px) rotate(270deg);
+  }
+  100% {
+    transform: translateX(0px) rotate(270deg);
+  }
+}

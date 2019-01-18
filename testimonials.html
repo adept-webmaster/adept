@@ -1,0 +1,71 @@
+---
+title: Testimonials
+permalink: "/testimonials/"
+position: 7
+layout: static-page
+show: true
+---
+<div class="container py-5">
+  <div class="row m-0">
+    <h1 class="h4 text-primary">{{ page.title }}</h1>
+  </div>
+  <div class="row m-0">
+    <p>With a productive warehouse storage management, Adept Fulfilment ensures 
+    your goods are treated with care and consideration, as if they were our own.</p>
+  </div>
+
+  <div class="row m-0">
+    {% for testimonial in site.data.testimonials %}
+      <div class="col-lg-4 col-6 text-center modal-activate" id="{{ testimonial.title | replace: ' ', '-' }}">
+        {% capture client_logo %}{{ testimonial.image }}{% endcapture %}
+        {% capture client_name %}{{ testimonial.title }}{% endcapture %}
+        <div class="bg-white rounded-circle w-75 mb-md-2 mb-4 mx-auto">
+          {% include image.html name=client_logo alt=client_name class="img-fluid w-100 p-md-5 p-3" %}
+        </div>
+
+        <h2 class="text-primary h5 mt-2 d-md-block d-none">{{ client_name }}</h2>
+        <div class="d-md-block d-none">
+          {{ testimonial.content | markdownify }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% for testimonial in site.data.testimonials %}
+  {% capture client_logo %}{{ testimonial.image }}{% endcapture %}
+  {% capture client_name %}{{ testimonial.title }}{% endcapture %}
+  {% capture client_id %}{{ testimonial.title | replace: ' ', '-' }}{% endcapture %}
+  {% capture client_testimonial %}{{ testimonial.content | markdownify }}{% endcapture %}
+  {% include testimonial-modal.html id=client_id client=client_name image=client_logo content=client_testimonial %}
+{% endfor %}
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    $('.modal-activate').click(function() {
+      if ($(window).width() < 768) {
+        if ($(document).scrollTop() < $('header').height()) {
+          $('.modal-testimonial .modal-dialog').css('top', $('header').height() - $(document).scrollTop() + 'px');
+        } else {
+          $('.modal-testimonial .modal-dialog').css('top', '0px');
+        }
+        $('#' + this.id + '-Modal').on('show.bs.modal', function (e) {
+          $('html').addClass('modal-open');
+        })
+
+        $('#' + this.id + '-Modal').on('hide.bs.modal', function (e) {
+          $('html').removeClass('modal-open');
+        })
+
+
+        $('#' + this.id + '-Modal').modal();
+      }
+    })
+
+    $(window).resize(function() {
+      if ($(window).width() > 768) {
+        $('.modal').modal('hide');
+      }
+    })
+  });
+</script>

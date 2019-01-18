@@ -1,0 +1,83 @@
+<div
+  class="jumbotron jumbotron-fluid jumbotron-home container-fluid d-flex flex-column justify-content-end rounded-0 m-0 text-light pt-5
+  {% if include.class %} {{ include.class }}{% endif %}
+  lazyload js"
+  style="background: {% if include.bg_image %}url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};">
+  <div class="row d-flex flex-column jumbotron--content-box pt-5 pb-0 py-md-5
+    {% if include.text_position %}
+      {% if include.text_position == 'center' %} mx-auto
+      {% elsif include.text_position == 'left' %} mr-auto ml-0 col-sm-12 col-md-6 col-lg-5 col-xl-4
+      {% endif %}
+    {% endif %}
+    {% unless include.type == 'full' %} px-4{% endunless %}
+    text-md-left text-center">
+    {% include image.html name="Adept Icon.svg" class="img-fluid w-10 mx-auto mr-md-0 ml-md-auto" %}
+    <h1 class="font-weight-normal pb-4 pb-md-0 m-0">{{ include.heading }}<br>
+      <span class="text-primary font-weight-normal">{{ include.lead }}</span>
+    </h1>
+
+  </div>
+  {% if include.link %}
+    <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 bg-primary text-md-right text-center px-0 hero-contact-slither">
+      <a href="{{ include.url }}" class="row m-0 px-5 py-1">
+        <span class="w-100 text-light font-weight-normal pb-1 {% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
+          {{ include.link }}   <i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i>
+        </span>
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+<noscript>
+    <div
+    class="jumbotron container-fluid rounded-0 m-0
+    {% if include.type %}{% if include.type == 'full' %} jumbotron-fluid{% endif %}{% endif %}
+    {% if include.class %} {{ include.class }}{% endif %}"
+    style="background: {% if include.overlay %}{% if include.overlay == 'true' %}linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)){% endif %}{% endif %}
+    {% if include.bg_image %}{% if include.overlay %},{% endif %}url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};
+        color: {% if include.text_color %}{{ include.text_color }};{% else %}#ffffff;{% endif %}">
+    <div class="row d-flex flex-column jumbotron--content-box p-5
+      {% if include.text_position %}
+        {% if include.text_position == 'center' %} mx-auto
+        {% elsif include.text_position == 'left' %} mr-auto ml-0 col-md-5
+        {% endif %}
+      {% endif %}
+      {% unless include.type == 'full' %} px-4{% endunless %}
+      {% if include.text_align %}
+        {% if include.text_align == 'center' %} text-center{% endif %}
+        {% if include.text_align == 'right' %} text-md-right text-center{% endif %}
+      {% endif %}"
+      {% if include.type %}
+        {% if include.type == 'full' %}
+          style="background: rgba(43,43,43,0.73);"
+        {% endif %}
+      {% endif %}>
+      <h1 class="h2 {% if include.type %}{% if include.type == 'full' %}m-0{% endif %}{% endif %}">{{ include.heading }}<br><span class="text-primary font-weight-normal">{{ include.lead }}</span></h1>
+      <p class="lead">
+        {% if include.button_label %}
+          <a class="btn btn-cta btn-lg text-uppercase font-weight-bold"
+          href="{% if include.button_link %}{{ include.button_link }}{% else %}#{% endif %}"
+          role="button">
+            {{ include.button_label }}
+          </a>
+        {% endif %}
+      </p>
+    </div>
+    {% if include.link %}
+      <div class="col-md-5 bg-primary text-right px-0">
+        <a href="{{ include.url }}" class="row m-0 px-5 py-1">
+          <span class="w-100 text-light font-weight-normal pb-1 {% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
+            {{ include.link }}   <i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i>
+          </span>
+        </a>
+      </div>
+    {% endif %}
+    <div class="row jumbotron__icons jumbotron--content-box p-md-3 p-2 pt-3 mx-0"
+      {% if include.type %}
+        {% if include.type == 'full' %}
+          style="background: rgba(49,49,49,0.89);"
+        {% endif %}
+      {% endif %}>
+    </div>
+  </div>
+</noscript>
