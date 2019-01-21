@@ -8,8 +8,6 @@ body {
   perspective: 1000;
 
   -webkit-backface-visibility: hidden;
-
-  cursor: url('/uploads/adept-cursor.png'), default;
 }
 
 @include media-breakpoint-down(md) {
