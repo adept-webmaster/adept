@@ -19,7 +19,7 @@
   </div>
   {% if include.link %}
     <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 bg-primary text-md-right text-center px-0 hero-contact-slither">
-      <a href="{{ include.url }}" class="row m-0 px-5 py-1">
+      <a href="{{ include.url | absolute_url }}" class="row m-0 px-5 py-1">
         <span class="w-100 text-light font-weight-normal pb-1 {% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
           {{ include.link }}   <i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i>
         </span>
@@ -49,7 +49,7 @@
   </div>
   {% if include.link %}
     <div class="col-sm-12 col-md-6 col-lg-5 col-xl-4 bg-primary text-md-right text-center px-0 hero-contact-slither">
-      <a href="{{ include.url }}" class="row m-0 px-5 py-1">
+      <a href="{{ include.url | absolute_url }}" class="row m-0 px-5 py-1">
         <span class="w-100 text-light font-weight-normal pb-1 {% if include.type %}{% if include.type == 'full' %}lead m-0{% endif %}{% endif %}">
           {{ include.link }}   <i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i>
         </span>
