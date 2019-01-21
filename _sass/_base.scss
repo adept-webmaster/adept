@@ -125,7 +125,8 @@ a {
 }
 
 .lazyload {
-	opacity: 0;
+  opacity: 0;
+  will-change: opacity;
 }
 
 img.lazyloading {
@@ -137,6 +138,7 @@ img.lazyloading {
 
 .come-in-view {
   opacity: 0 !important;
+  will-change: opacity, transform;
 }
 
 .come-in {

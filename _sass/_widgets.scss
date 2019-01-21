@@ -36,6 +36,7 @@
       transition: 0.4s all linear;
       opacity: 0;
       white-space: nowrap;
+      will-change: opacity;
     }
 
     top: 0;
@@ -52,6 +53,8 @@
     visibility: hidden;
     overflow: hidden;
 
+    will-change: opacity, width, visibility, overflow;
+
     &.show span {
       opacity: 1;
     }
@@ -67,6 +70,7 @@
 
 .cookie-banner {
   z-index: 1100 !important;
+  will-change: transform;
   &.appear {
     -webkit-animation: appear 1s ease;
     -moz-animation:    appear 1s ease;
