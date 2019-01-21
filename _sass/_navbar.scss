@@ -99,6 +99,7 @@ footer {
 main, header, footer {
   position: relative;
   left: 0;
+  will-change: left;
   transition: left .25s ease-in-out;
   &.nav-open {
     position: relative;
