@@ -80,3 +80,7 @@ overrides*/
 .text-muted {
   color: map-get($theme-colors, 'muted') !important;
 }
+
+body {
+  cursor: url({{ '/uploads/adept-cursor.png' | absolute_url }}), default;
+}
