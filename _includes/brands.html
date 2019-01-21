@@ -14,24 +14,18 @@
 
           {% capture brand_logo %}{{ brand.logo }}{% endcapture %}
           {% capture brand_title %}{{ brand.title }}{% endcapture %}
-          <a 
-          href="{{ brand.link }}" 
-          title="{{ brand.title }}'s Website" 
-          target="_blank" 
-          rel="noreferrer" 
+          <div 
           class="brand-grid__item col-lg-2 col-6 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4 come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %} js">
             {% include image.html name=brand_logo alt=brand_title class="img-fluid w-100" %}
-          </a>
+          </div>
         {% endfor %}
 
         <noscript class="row">
           {% for brand in site.data.brands %}
             {% capture brand_logo %}{{ brand.logo }}{% endcapture %}
             {% capture brand_title %}{{ brand.title }}{% endcapture %}
-            <a href="{{ brand.link }}" 
-            rel="noreferrer" 
-            title="{{ brand.title }}'s Website" 
-            class="brand-grid__item w-20 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4">
+            <div 
+            class="brand-grid__item col-lg-2 col-6 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4">
               {% include noscript-image.html name=brand_logo alt=brand_title class="img-fluid" %}
             </div>
           {% endfor %}
