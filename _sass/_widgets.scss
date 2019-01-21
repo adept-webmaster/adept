@@ -66,6 +66,7 @@
 }
 
 .cookie-banner {
+  z-index: 1100 !important;
   &.appear {
     -webkit-animation: appear 1s ease;
     -moz-animation:    appear 1s ease;

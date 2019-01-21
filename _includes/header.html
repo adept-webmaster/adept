@@ -1,4 +1,4 @@
-<header class="site-header container-fluid bg-dark">
+<header class="site-header px-lg-0 px-3 bg-dark">
   <nav class="row navbar navbar-expand-lg navbar-dark bg-dark border-bottom p-0 px-md-2 pb-md-1">
     <div class="container flex-column h-100 bg-dark" style="z-index: 1;">
       <div class="row w-100 h-100 bg-dark">
@@ -89,15 +89,23 @@
 
 <script>
   window.onload = function() {
-    if (window.jQuery) {
-      $('#NavMobileOverlayButton').click(function() {
-        $(this).toggleClass('is-active').attr('aria-expanded', function (i, attr) {
-          return attr == 'true' ? 'false' : 'true'
-        });
-        
-        $('#NavMobileOverlay').toggleClass('open');
-        $('header, main, footer').toggleClass('nav-open');
+    document.querySelector('#NavMobileOverlayButton').addEventListener('click', function() {
+      this.classList.toggle('is-active');
+
+      var aria_value = this.getAttribute('aria-expanded');
+      
+      if (aria_value == 'true') {
+        this.setAttribute('aria-expanded', 'false');
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+      }
+      
+      document.getElementById('NavMobileOverlay').classList.toggle('open');
+      var layout_tags = document.querySelectorAll('header, main, footer');
+
+      [].forEach.call(layout_tags, function(tag) {
+        tag.classList.toggle('nav-open');
       })
-    }
+    })
   }
 </script>

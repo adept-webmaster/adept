@@ -84,3 +84,7 @@ overrides*/
 body {
   cursor: url({{ '/uploads/adept-cursor.png' | absolute_url }}), default;
 }
+
+.embed-responsive {
+  background: url({{ '/uploads/spinner.svg' | absolute_url }}) no-repeat center;
+}

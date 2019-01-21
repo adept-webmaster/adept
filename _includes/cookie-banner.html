@@ -7,19 +7,20 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', function() {
+    var cookie_banner = document.getElementsByClassName('cookie-banner');
     // if there is a cookies_acknowledged cookie then hide cookie banner
-    if (Cookies.get('cookies_acknowledged')) {
-      return
-    } else {
-      $('.cookie-banner').removeClass('d-none').addClass('appear');
+    if (!Cookies.get('cookies_acknowledged')) {
+      cookie_banner[0].classList.remove('d-none');
+      cookie_banner[0].classList.add('appear');
+
+      // this cookie expires in a year if it does not already exist
+      document.getElementById('Cookie-Acknowledge').addEventListener('click', function() {
+        if (Cookies.get('cookies_acknowledged') == null) {
+          Cookies.set('cookies_acknowledged', 'yes', { expires: 365, path: '/' });
+        }
+        cookie_banner[0].classList.remove('appear')
+        cookie_banner[0].classList.add('disappear');
+      })
     }
-    
-    // this cookie expires in a year if it does not already exist
-    $('#Cookie-Acknowledge').click(function() {
-      if (Cookies.get('cookies_acknowledged') == null) {
-        Cookies.set('cookies_acknowledged', 'yes', { expires: 365, path: '/' });
-      }
-      $('.cookie-banner').removeClass('appear').addClass('disappear');
-    })
   })
 </script>
