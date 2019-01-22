@@ -15,8 +15,8 @@
           {% capture brand_logo %}{{ brand.logo }}{% endcapture %}
           {% capture brand_title %}{{ brand.title }}{% endcapture %}
           <div 
-          class="brand-grid__item col-lg-2 col-6 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4 come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %} js">
-            {% include image.html name=brand_logo alt=brand_title class="img-fluid w-100" %}
+          class="brand-grid__item col-lg-2 col-6 d-flex flex-wrap justify-content-center align-items-center py-md-0 py-4 ratio-container unknown-ratio-container come-in-view come-in-up {% unless forloop.first %}delay-{{ delay }}{% endunless %} js">
+            {% include image.html name=brand_logo alt=brand_title %}
           </div>
         {% endfor %}
 

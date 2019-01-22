@@ -16,10 +16,13 @@
       </div>
 
       <div class="row m-0 text-lg-right text-center justify-content-between align-items-center">
-        <div class="col-lg text-center">
+        <div class="col-lg text-center ratio-box" style="min-height: 65px;">
           {% capture logo %}{{ site.logo }}{% endcapture %}
           {% capture alt %}{{ site.short_title }} Logo{% endcapture %}
-          {% include image.html name=logo class="img-fluid logo mx-auto" alt=alt %}
+          {% include image.html name=logo class="img-fluid mx-auto" alt=alt %}
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
         </div>
         <noscript>
           {% include noscript-image.html name=logo class="img-fluid logo mx-auto" alt=alt %}

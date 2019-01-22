@@ -8,11 +8,16 @@
     </div>
   
     <div class="row m-0">
+      {% assign delay = 0 %}
+          
       {% for testimonial in site.data.testimonials %}
+        {% unless forloop.first %}
+          {% assign delay = delay | plus: 1 %}
+        {% endunless %}
         <div class="col-lg-4 col-6 px-0 px-md-2 text-center modal-activate" id="{{ testimonial.title | replace: ' ', '-' }}">
           {% capture client_logo %}{{ testimonial.image }}{% endcapture %}
           {% capture client_name %}{{ testimonial.title }}{% endcapture %}
-          <div class="bg-white rounded-circle w-75 mb-md-2 mb-4 mx-auto">
+          <div class="bg-white rounded-circle w-75 mb-md-2 mb-4 mx-auto ratio-box come-in-view fade-in {% unless forloop.first %}delay-{{ delay }}{% endunless %}" style="padding-bottom: 75%;">
             {% include image.html name=client_logo alt=client_name class="img-fluid w-100 p-md-5 p-3" %}
             <noscript>
               {% include noscript-image.html name=client_logo alt=client_name class="img-fluid w-100 p-md-5 p-3" %}
