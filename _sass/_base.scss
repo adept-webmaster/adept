@@ -134,6 +134,10 @@ img.lazyloading {
   z-index: 2 !important;
   height: 72px !important;
   object-fit: contain;
+  justify-self: center;
+  align-self: center;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .come-in-view {
@@ -167,6 +171,13 @@ img.lazyloading {
 }
 
 .room-tab-pane {
+  @include fadeIn(
+    $function: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    $duration: .8s
+  );
+}
+
+.come-in-view.fade-in.come-in .lazyloaded {
   @include fadeIn(
     $function: cubic-bezier(0.25, 0.46, 0.45, 0.94),
     $duration: .8s
