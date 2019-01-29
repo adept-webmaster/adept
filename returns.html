@@ -7,16 +7,14 @@ layout: fulfilment-page
 show: true
 ---
 
-{% include hero.html
-  bg_image="returns-management.jpg"
-  bg_position="center"
-  bg_size="cover"
-  type="full"
-%}
+{% capture current_page %}{{ page.title }}{% endcapture %}
 
-{% assign current_page = site.data.fulfilment[page.page] %}
+{% for item in site.data.fulfilment %}
+  {% capture item_title %}{{ item.title }}{% endcapture %}
+  {% if item_title == current_page %}
+    {% capture page_content %}{{ item.content | markdownify }}{% endcapture %}
+  {% endif %}
+{% endfor %}
 
-<div class="container py-5">
-  <h1 class="h4 text-primary">{{ current_page.title }}</h1>
-  {{ current_page.content | markdownify }}
-</div>
+<h1 class="h4 text-primary">{{ current_page }}</h1>
+{{ page_content }}

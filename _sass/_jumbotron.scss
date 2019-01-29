@@ -22,27 +22,33 @@
     }
 
     .jumbotron--content-box {
-      @include media-breakpoint-up(md) {
-        background: rgba(49,49,49,0.90);
-        padding-right: 10rem;
-        padding-left: 7rem;
+      background: rgba(49,49,49,0.90);
+      @include media-breakpoint-up(lg) {
+        padding-right: 10rem !important;
+        padding-left: 7rem !important;
 
-        @include media-breakpoint-down(md) {
-          padding-right: 7rem;
-          padding-left: 5rem;
-        }
+        // @include media-breakpoint-down(md) {
+        //   padding-right: 7rem;
+        //   padding-left: 5rem;
+        // }
+      }
+      img {
+        max-width: 80px;
 
-        img {
-          width: 85px !important;
+        @include media-breakpoint-up(md) {
           position: absolute;
+        }
+        
+        @include media-breakpoint-up(lg) {
+          width: 85px !important;
           right: 100px;
           top: 35px;
+        }
 
-          @include media-breakpoint-down(md) {
-            width: 64px !important;
-            right: 70px;
-            top: 35px;
-          }
+        @include media-breakpoint-only(md) {
+          width: 64px !important;
+          right: 40px;
+          top: 35px;
         }
       }
     }
