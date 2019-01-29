@@ -14,7 +14,7 @@
         {% unless forloop.first %}
           {% assign delay = delay | plus: 1 %}
         {% endunless %}
-        <div class="col-lg-4 col-6 px-0 px-md-2 text-center modal-activate" id="{{ testimonial.title | replace: ' ', '-' }}">
+        <div class="col-lg-4 col-6 px-0 px-md-2 py-3 text-center modal-activate" id="{{ testimonial.title | replace: ' ', '-' }}">
           {% capture client_logo %}{{ testimonial.image }}{% endcapture %}
           {% capture client_name %}{{ testimonial.title }}{% endcapture %}
           <div class="bg-white rounded-circle w-75 mb-md-2 mb-4 mx-auto ratio-box come-in-view fade-in {% unless forloop.first %}delay-{{ delay }}{% endunless %}" style="padding-bottom: 75%;">
@@ -24,7 +24,7 @@
             </noscript>
           </div>
   
-          <h2 class="text-primary h5 mt-2 d-md-block d-none js">{{ client_name }}</h2>
+          <h2 class="text-primary h5 mt-3 d-md-block d-none js">{{ client_name }}</h2>
           <div class="d-md-block d-none js">
             {{ testimonial.content | markdownify }}
           </div>
