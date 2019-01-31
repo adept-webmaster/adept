@@ -1,7 +1,7 @@
 <header class="site-header px-lg-0 px-3 bg-dark">
   <nav class="row navbar navbar-expand-lg navbar-dark bg-dark border-bottom p-0 px-md-2 pb-md-1">
-    <div class="container flex-column h-100 bg-dark" style="z-index: 1;">
-      <div class="row w-100 h-100 bg-dark">
+    <div class="container flex-column bg-dark" style="z-index: 1;">
+      <div class="row w-100 bg-dark">
         <div class="position-absolute col-3 h-100 d-lg-none d-flex px-0 hamburger-container">
           <button class="hamburger hamburger--vortex navbar-toggler
             d-flex d-lg-none align-items-center"
@@ -15,10 +15,10 @@
               </span>
           </button>
         </div>
-        <a class="col-12 col-lg-8 navbar-brand mx-auto text-center m-0 px-0 py-3 h-100" rel="author" href="{{ '/' | relative_url }}">
+        <a class="col-12 col-lg-8 navbar-brand mx-auto text-center m-0 px-0 py-3" rel="author" href="{{ '/' | relative_url }}">
           {% assign logo = site.logo %}
           {% capture alt %}{{ site.short_title }} Logo{% endcapture %}
-          {% include noscript-image.html name=logo class="img-fluid h-100" alt=alt %}
+          {% include noscript-image.html name=logo class="img-fluid header-logo" alt=alt %}
         </a>
       </div>
 
