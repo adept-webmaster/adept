@@ -8,12 +8,13 @@ layout: default
   {% capture item_title %}{{ item.title }}{% endcapture %}
   {% if item_title == current_page %}
     {% capture page_image %}{{ item.image }}{% endcapture %}
+    {% capture page_image_position %}{{ item.position }}{% endcapture %}
   {% endif %}
 {% endfor %}
 
 {% include hero.html
   bg_image=page_image
-  bg_position="center"
+  bg_position=page_image_position
   bg_size="cover"
   type="full"
 %}

@@ -1,9 +1,15 @@
 .site-header {
   .navbar {
-    height: 160px;
-
     @include media-breakpoint-down(md) {
+      min-height: 80px;
+    }
+
+    .header-logo {
       height: 80px;
+
+      @include media-breakpoint-down(md) {
+        height: 50px;
+      }
     }
 
     .hamburger-container {
@@ -26,6 +32,7 @@
       }
 
       &.show {
+        display: block;
         top: 40px;
       }
 
