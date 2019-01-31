@@ -67,6 +67,6 @@ lazySizesConfig.loadMode = 1;
     var elemTop = $(elem).offset().top;
     var elemBottom = elemTop + $(elem).height();
     
-    return ((elemBottom <= docViewBottom + 100) && (elemTop >= docViewTop - 100));
+    return elemTop <= docViewBottom;
   }
 })(jQuery);
