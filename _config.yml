@@ -16,14 +16,14 @@ baseurl:
 url:
 markdown: kramdown
 phone: 0191 234 345 556
-email: info@adeptecommerceandfulfilment.com
-linkedin: https://www.linkedin.com/
+email: bd@adeptfulfilment.com
+linkedin: https://www.linkedin.com/company/adept-fulfilment/
 address:
-  address_line_1: Floor 3
-  address_line_2: 2 Lighthouse View
+  address_line_1: 7-8 Fox Cover Industrial Estate
+  address_line_2: Admirality Way
   city: Seaham
   county: County Durham
-  postcode: SR7 7PR
+  postcode: SR7 7DN
 img_dir: /uploads/
 exclude:
   - vendor
