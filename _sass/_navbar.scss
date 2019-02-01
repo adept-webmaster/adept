@@ -22,6 +22,15 @@
   li.nav-item {
     text-transform: uppercase;
 
+    .nav-link {
+      @include media-breakpoint-only(xl) {
+        padding-left: 1.4rem;
+        padding-right: 1.4rem;
+      }
+
+      padding-left: .35rem;
+      padding-right: .35rem;
+    }
     .dropdown-menu {
       transition: top .35s ease;
       top: -230px;
