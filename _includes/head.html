@@ -14,14 +14,14 @@
   
   {% include fav.html %}
 
-  <script async src="{{ "/assets/scripts/lazysizes.min.js" | absolute_url }}"></script>
+  <script async src="{{ '/assets/scripts/lazysizes.min.js' | absolute_url }}"></script>
 
   <link rel="preload" href="{{ site.img_dir | absolute_url }}{{ site.logo }}" as="image">
-  <link rel="preload" href="{{ "assets/stylesheets/main.css" | absolute_url }}" as="style">
+  <link rel="preload" href="{{ 'assets/stylesheets/main.css' | absolute_url }}?{{ site.time | date: '%s%N' }}" as="style">
 
   <link
     rel="stylesheet"
-    href="{{ "assets/stylesheets/main.css" | absolute_url }}"
+    href="{{ 'assets/stylesheets/main.css' | absolute_url }}?{{ site.time | date: '%s%N' }}"
   >
 
   {%- include scripts.html -%}
