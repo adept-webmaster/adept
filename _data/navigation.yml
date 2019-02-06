@@ -2,11 +2,10 @@
   url: /
 - title: About
   url: /about
+- title: Warehousing & Storage
+    url: /warehousing
 - title: Order Fulfilment
   sublinks:
-    - title: Warehousing & Storage
-      url: /warehousing
-    - title: separator
     - title: Picking & Packing
       url: /picking-packing
     - title: separator
