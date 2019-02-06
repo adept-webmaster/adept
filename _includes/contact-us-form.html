@@ -1,8 +1,7 @@
-<div class="container-fluid py-lg-5">
+<div class="container py-lg-5">
+  <h1 class="h4 text-primary">Contact Us</h1>
   <div class="row justify-content-center">
-    <div class="col-lg-5 pt-3">
-      <h1 class="h4 text-primary">Contact Us</h1>
-      {% include address-schema.html %}
+    <div class="col-lg-6 pt-3">
       <form action="https://formspree.io/{{ site.email }}" method="POST">
         <div class="form-row">
           <div class="col pb-3 py-lg-3">
@@ -49,6 +48,13 @@
         is a service used by us to send enquiries through to the correct people.
         <a href="http://docs.formspree.io/files/privacy.pdf" target="_blank">Please view their privacy policy by clicking here for more information.</a></span>
       </form>
+    </div>
+
+    <div class="col-lg-6 pt-map">
+      <div class="embed-responsive embed-responsive-4by3 mb-3">
+        <iframe class="embed-responsive-item" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=7-8%20Fox%20Cover%20Industrial%20Estate&key=AIzaSyBjtUsgnubz6tKy4-bwmGkF2MnHUPL3qe0" allowfullscreen></iframe>
+      </div>
+      {% include address-schema.html %}
     </div>
   </div>
 </div>

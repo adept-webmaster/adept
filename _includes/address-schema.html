@@ -2,11 +2,11 @@
   <span property="name" class="font-weight-bold">{{ site.short_title }}</span>
   <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="text-muted">
     <span itemprop="streetAddress">
-      {{ site.address.address_line_1 }} <br />
-      {{ site.address.address_line_2 }} <br />
+      {{ site.address.address_line_1 }}, 
+      {{ site.address.address_line_2 }}, 
     </span>
-    <span itemprop="addressLocality">{{ site.address.city }}</span>,<br />
-    <span itemprop="addressRegion">{{ site.address.county }}</span><br />
+    <span itemprop="addressLocality">{{ site.address.city }}, </span>
+    <span itemprop="addressRegion">{{ site.address.county }}, </span>
     <span itemprop="postalCode">{{ site.address.postcode }}</span>
   </div>
   <span property="telephone"><a href="tel:{{ site.phone }}">{{ site.phone }}</a></span>

@@ -9,9 +9,9 @@ collections:
   uploads:
     title: Uploads
     output: true
-  posts:
-    title: News
-    output: true
+  # posts:
+  #   title: News
+  #   output: true
 baseurl:
 url:
 markdown: kramdown
@@ -27,6 +27,8 @@ address:
 img_dir: /uploads/
 exclude:
   - vendor
+  - node_modules
+  - gulpfile.js
 sass:
   sass_dir: _sass
   style: compressed
