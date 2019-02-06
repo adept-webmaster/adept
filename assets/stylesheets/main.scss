@@ -3,7 +3,7 @@
 
 @charset 'utf-8';
 
-//Important, this import must go here
+//Important, these imports must go here
 @import
   'vendor/bootstrap/bootstrap/functions',
   'vendor/bootstrap/bootstrap/variables',
@@ -31,6 +31,7 @@
   'brands',
   'footer',
   'services',
+  'contact',
   'widgets';
 //End custom imports
 
