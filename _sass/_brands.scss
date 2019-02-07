@@ -1,5 +1,9 @@
 .brand-grid__item {
-  min-height: 190px !important;
+  @include media-breakpoint-down(lg) {
+    min-height: 130px !important;
+  }
+  
+  min-height: 180px !important;
 
   img:hover {
     animation: bounce 0.4s ease-in;
