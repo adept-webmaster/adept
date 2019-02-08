@@ -1,9 +1,11 @@
 <div
-  class="jumbotron jumbotron-fluid jumbotron-home container-fluid d-flex flex-column justify-content-end rounded-0 m-0 text-light pt-5
+  class="jumbotron jumbotron-fluid jumbotron-home container-fluid rounded-0 m-0 text-light pt-5
+  justify-content-end align-items-center d-md-block d-flex flex-column
   {% if include.class %} {{ include.class }}{% endif %}
   lazyload js"
   style="background: {% if include.bg_image %}url('{{ site.img_dir | absolute_url }}{{ include.bg_image }}') no-repeat {{ include.bg_position }} / {{ include.bg_size }}{% endif %};">
-  <div class="row d-flex flex-column jumbotron--content-box pt-5 px-5 pb-0 py-md-5
+  <div class="row jumbotron--content-box pt-5 px-5 pb-0 py-md-5
+    flex-md-row flex-column
     {% if include.text_position %}
       {% if include.text_position == 'center' %} mx-auto
       {% elsif include.text_position == 'left' %} mr-auto ml-0 col-sm-12 col-md-6 col-lg-5 col-xl-4
