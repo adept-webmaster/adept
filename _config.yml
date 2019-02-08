@@ -13,7 +13,7 @@ collections:
   #   title: News
   #   output: true
 baseurl:
-url:
+url: https://www.adeptfulfilment.com
 markdown: kramdown
 phone: 0191 389 8725
 email: bd@adeptfulfilment.com
@@ -39,3 +39,5 @@ plugins:
   - jekyll-seo-tag
 whitelist:
   - jekyll-redirect-from
+github: [metadata]
+repository: liam-cooper/adept
