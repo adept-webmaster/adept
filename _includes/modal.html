@@ -8,7 +8,9 @@
       </div>
       {% capture image %}{{ include.image }}{% endcapture %}
       {% capture alt %}{{ include.alt }}{% endcapture %}
-      {% include image.html name=image  alt=alt class="img-fluid w-100" %}
+      {% if include.image %}
+        {% include image.html name=image  alt=alt class="img-fluid w-100" %}
+      {% endif %}
       <div class="modal-body text-dark">
         <p>At Adept Fulfilment, we specialise in efficient warehouse and indoor 
         storage facilities, providing you with expert guidance and a premium 
