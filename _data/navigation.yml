@@ -1,21 +1,21 @@
 - title: Home
   url: /
 - title: About
-  url: /about
+  url: /about/
 - title: Warehousing & Storage
-  url: /warehousing
+  url: /warehousing/
 - title: Order Fulfilment
   sublinks:
     - title: Picking & Packing
-      url: /picking-packing
+      url: /picking-packing/
     - title: separator
     - title: Shipping
-      url: /shipping
+      url: /shipping/
     - title: separator
     - title: Returns Management
-      url: /returns
+      url: /returns/
     - title: separator
     - title: Health & Safety
-      url: /health-safety
+      url: /health-safety/
 - title: Contact Us
-  url: /contact
+  url: /contact/

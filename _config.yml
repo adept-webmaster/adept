@@ -34,10 +34,7 @@ sass:
   style: compressed
 plugins:
   - jekyll-feed
-  - github-pages
-  - jekyll-redirect-from
   - jekyll-seo-tag
-whitelist:
-  - jekyll-redirect-from
+  - github-pages
 github: [metadata]
 repository: liam-cooper/adept

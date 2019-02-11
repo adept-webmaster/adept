@@ -3,16 +3,16 @@
     Stock preparation for Fulfilment by Amazon (FBA) and approved for Seller Fulfilled Prime (SFP).
   image: warehouse-towers.jpg
   alt: Warehouse Towers
-  link: /picking-packing
+  link: /picking-packing/
 - title: Stock Storage
   content: |
     Flexible storage capacity managed 24/7 by our intelligent stock control platform.
   image: warehouse-pallets.jpg
   alt: Pallets
-  link: /warehousing
+  link: /warehousing/
 - title: Total eCommerce Logistics
   content: |
     Fully managed international freight and import of goods from factory door to national and international destinations.
   image: warehouse-in-out.jpg
   alt: Warehouse Goods Location
-  link: /shipping
+  link: /shipping/
