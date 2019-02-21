@@ -11,7 +11,7 @@ source "https://rubygems.org"
 gem "jekyll", '~> 3.7.4'
 
 # Bootstrap
-gem 'bootstrap', '~> 4.2.1'
+gem 'bootstrap', '~> 4.3.1'
 
 # Vendor stuff
 gem 'hamburgers', "~> 1.1.3"
