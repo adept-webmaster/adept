@@ -37,4 +37,4 @@ plugins:
   - jekyll-seo-tag
   - github-pages
 github: [metadata]
-repository: liam-cooper/adept
+repository: adept-webmaster/adept
