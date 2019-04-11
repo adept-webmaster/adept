@@ -13,10 +13,10 @@ collections:
   #   title: News
   #   output: true
 baseurl:
-url: https://www.adeptfulfilment.com
+url: https://www.adeptfulfilment.co.uk
 markdown: kramdown
 phone: 0191 389 8725
-email: bd@adeptfulfilment.com
+email: bd@adeptfulfilment.co.uk
 linkedin: https://www.linkedin.com/company/adept-fulfilment/
 address:
   address_line_1: 7-8 Fox Cover Industrial Estate
